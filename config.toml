@@ -1,0 +1,34 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Uninitialized Memory"
+theme = "terminal"
+
+[params]
+themeColor = "blue"
+fullWidthTheme = false
+centerTheme = true
+
+[languages]
+[languages.en]
+title = "Uninitialized Memory"
+subtitle = "The random musings of a nerd."
+keywords = ""
+copyright = ""
+menuMore = "Show more"
+readMore = "Read more"
+readOtherPosts = "Read other posts"
+
+[languages.en.params.logo]
+logoText = "Uninitialized Memory"
+logoHomeLink = "/"
+
+[languages.en.menu]
+[[languages.en.menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts"
+
+[[languages.en.menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
