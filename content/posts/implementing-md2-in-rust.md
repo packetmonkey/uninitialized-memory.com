@@ -24,7 +24,7 @@ It's important to note that the output digest of MD2 is a 128 bit fingerprint.
 Section 3 covers the description of the algorithm itself.
 This is where we get to start writing code to implement.
 
-Before we start, [appendix 6](https://datatracker.ietf.org/doc/html/rfc1319#appendix-A.5) contains a test suite of input values and the hash that would result in processing them.
+Before we start, [appendix 5](https://datatracker.ietf.org/doc/html/rfc1319#appendix-A.5) contains a test suite of input values and the hash that would result in processing them.
 Lets throw that into some unit tests so we can have confidence we implemented things correctly when we are done.
 
 ```rust
@@ -170,7 +170,7 @@ Here we also see the inverse of our `as u8` above with `as usize`. Rust wants to
 Now that we have our checksummed value, we can proceed with sections [3.3](https://datatracker.ietf.org/doc/html/rfc1319#section-3.3) and [3.4](https://datatracker.ietf.org/doc/html/rfc1319#section-3.4) which is how we actually calculate the hash.
 
 
-First we inititalize a 48 byte space with zeros and then iterate though the message blocks following the described algorithm.
+First we initialize a 48 byte space with zeros and then iterate though the message blocks following the described algorithm.
 Once again we are going to use the `chunks` method to make it easer to calculate the correct addresses.
 
 
@@ -201,7 +201,7 @@ $ gcc example.c && ./a.out
 $
 ```
 
-Below in the example C implementation the following is done to bitmask 255 and give a similar result for a `t` variable size larger than 8 bits.
+Below in the example C implementation the following is done to bit mask 255 and give a similar result for a `t` variable size larger than 8 bits.
 
 ```c
   t = (t + i) & 0xff;
@@ -236,7 +236,7 @@ Because we are going to explicitly define a `u8` we are just going to use [wrapp
 ```
 
 # Formatting our result
-Now that we have a generated digest, we can output the first 16 bytes as hexidecemal as desctibed in [section 3.5](https://datatracker.ietf.org/doc/html/rfc1319#section-3.5).
+Now that we have a generated digest, we can output the first 16 bytes as hexadecimal as described in [section 3.5](https://datatracker.ietf.org/doc/html/rfc1319#section-3.5).
 We will take the first 16 bytes, map them into a hexadecimal value, collect them into a string and return that value as our output.
 
 ```rust
@@ -288,7 +288,7 @@ It looks like we have made a mistake.
 
 However it looks like our problem may be in the output.
 If we were generating the digest incorrectly, or the checksum or padding, given the characteristics of a cryptographic hash the values should be wildly different.
-Instead it looks like our length is wrong somtimes.
+Instead it looks like our length is wrong sometimes.
 
 If we look closer at the specific example, we can see we expected `01` to follow `ec` but instead we got `1e`.
 This makes me think we didn't correctly define how long each formatted block should be.
