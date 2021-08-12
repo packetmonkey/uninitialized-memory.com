@@ -1,5 +1,5 @@
 ---
-title: "Generating the MD2 S-Table"
+title: "Generating the MD2 S-Box"
 date: 2021-08-12
 ---
 
