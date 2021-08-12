@@ -129,7 +129,7 @@ I would prefer to use stable rust for this so instead we will use index variable
 
 We also cannot use `&mut` references in `const fn` functions.
 There is a [tracking issue](https://github.com/rust-lang/rust/issues/57349) for this as well, but we will need to use an alternative to our mutable `Vec` which contains the digits of PI.
-Instead what we an do is pass in an immutable array containing the digits and an index so we know which values to read next.
+Instead what we can do is pass in an immutable array containing the digits and an index so we know which values to read next.
 We can also return from this function the number of digits we have read, which allows us to keep the index accurate.
 This retains all the mutability in one function while still allowing us to break out the digit generation into it's own function for clarity.
 
