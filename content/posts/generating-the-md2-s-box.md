@@ -29,8 +29,6 @@ def rnd(n)
     y = 1000
   end
   
-  puts "> #{x} #{y}"
-
   if x < (n * (y / n))
     return x % n
   else
