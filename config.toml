@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Uninitialized Memory"
 theme = "terminal"
+enableRobotsTXT = true
 
 [params]
 themeColor = "blue"
