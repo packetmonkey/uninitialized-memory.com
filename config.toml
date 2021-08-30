@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://www.uninitialized-memory.com/"
 languageCode = "en-us"
 title = "Uninitialized Memory"
 theme = "terminal"
